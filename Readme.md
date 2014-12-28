@@ -19,7 +19,7 @@ If neither environment variable are present, then the result will be
 ## Example
 
 ```javascript
-var isDebug = require('isDebug');
+var isDebug = require('isdebug');
 
 console.log('isDebug = %s', isDebug);
 ```
