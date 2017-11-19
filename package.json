@@ -1,6 +1,6 @@
 {
   "name": "isdebug",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple module that returns true or false based on the NODE_ENV variable",
   "main": "index.js",
   "scripts": {
