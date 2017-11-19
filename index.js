@@ -1,21 +1,20 @@
-'use strict';
+'use strict'
 
-var env = process.env.NODE_ENV;
-var debug = process.env.DEBUG;
+const env = process.env
 
-exports = module.exports = (function() {
-  if (!env && !debug) {
-    return false;
+function checkDebug () {
+  if (!env.NODE_ENV && !env.DEBUG) return false
+  if (env.DEBUG) return true
+  if (env.NODE_ENV) {
+    const prefix = env.NODE_ENV.substring(0, 3).toUpperCase()
+    return prefix === 'DEV' || prefix === 'DEB'
   }
+  return false
+}
 
-  if (debug) {
-    return true;
+Object.defineProperty(module, 'exports', {
+  enumerable: true,
+  get () {
+    return checkDebug()
   }
-
-  var _env = env.substring(0, 3).toUpperCase();
-  if (_env === 'DEV' || _env === 'DEB') {
-    return true;
-  }
-
-  return false;
-}());
+})

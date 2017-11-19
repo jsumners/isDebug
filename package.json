@@ -4,8 +4,13 @@
   "description": "A simple module that returns true or false based on the NODE_ENV variable",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test.js",
+    "lint": "standard | snazzy"
   },
+  "precommit": [
+    "lint",
+    "test"
+  ],
   "author": "James Sumners",
   "license": "MIT",
   "keywords": [
@@ -19,5 +24,11 @@
   "homepage": "https://github.com/jsumners/isDebug",
   "bugs": {
     "url": "https://github.com/jsumners/isDebug/issues"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3",
+    "tap": "^10.7.3"
   }
 }
